@@ -1,0 +1,22 @@
+# Python tooling and virtual environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+
+# JavaScript tooling and build output
+node_modules/
+dist/
+coverage/
+
+# Local application state and credentials
+.artifacts/
+.artifacts-*/
+artifacts/
+.env
+samples/local/
+
+# Agent worktrees
+.worktrees/

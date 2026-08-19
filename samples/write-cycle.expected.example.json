@@ -1,0 +1,51 @@
+{
+  "document": {
+    "title": "Synthetic write cycle",
+    "mode": "hybrid",
+    "image_size": {
+      "width": 100,
+      "height": 60
+    }
+  },
+  "signals": [
+    {
+      "id": "sig_we",
+      "name": "WE#",
+      "row": 0,
+      "states": ["low", "high"]
+    }
+  ],
+  "events": [
+    {
+      "id": "evt_start",
+      "signal_id": "sig_we",
+      "type": "falling_edge",
+      "x": 10
+    },
+    {
+      "id": "evt_end",
+      "signal_id": "sig_we",
+      "type": "rising_edge",
+      "x": 70
+    }
+  ],
+  "timing_parameters": [
+    {
+      "id": "tp_twc",
+      "name": "tWC",
+      "from_event_id": "evt_start",
+      "to_event_id": "evt_end",
+      "participant_signal_ids": ["sig_we"],
+      "meaning": "Write cycle.",
+      "confidence": 0.9
+    }
+  ],
+  "relations": [
+    {
+      "timing_parameter_id": "tp_twc",
+      "signal_id": "sig_we",
+      "role": "write_cycle"
+    }
+  ],
+  "warnings": []
+}

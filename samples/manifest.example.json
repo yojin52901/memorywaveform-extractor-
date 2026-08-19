@@ -1,0 +1,10 @@
+{
+  "samples": [
+    {
+      "id": "write-cycle",
+      "image": "write-cycle.png",
+      "expected": "write-cycle.expected.json",
+      "allowed_relation_ids": ["tp_twc"]
+    }
+  ]
+}

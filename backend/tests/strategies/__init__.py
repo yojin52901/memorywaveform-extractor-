@@ -1,0 +1,1 @@
+"""Extraction-strategy tests."""
