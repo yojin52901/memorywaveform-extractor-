@@ -1,0 +1,99 @@
+name: Implementation task
+description: Create a small, verifiable unit of implementation work.
+title: "[Task] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Create one independently reviewable task. Keep the scope small enough
+        for one branch, one focused commit, and one pull request.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of the project will this task change?
+      multiple: true
+      options:
+        - Backend
+        - Frontend
+        - Extraction / ML
+        - API / CLI
+        - Infrastructure / DevOps
+        - Documentation
+        - Tests
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: Choose the relative urgency before the task is scheduled.
+      options:
+        - P0 - Critical
+        - P1 - High
+        - P2 - Normal
+        - P3 - Low
+    validations:
+      required: true
+
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal and context
+      description: What outcome is needed, and why does it matter?
+      placeholder: Describe the user or system outcome this task should achieve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope
+      description: List the files, components, and behavior that this task may change.
+      placeholder: |
+        - In scope:
+        - Out of scope:
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance criteria
+      description: Add one observable, testable outcome per checklist line.
+      placeholder: |
+        - [ ] Expected behavior A
+        - [ ] Expected behavior B
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-plan
+    attributes:
+      label: Test plan
+      description: State the automated checks and any manual verification required.
+      placeholder: |
+        - Automated:
+        - Manual:
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies and risks
+      description: Link prerequisite issues, design decisions, external services, or known risks.
+      placeholder: "None, or link issues such as #123."
+
+  - type: checkboxes
+    id: ready-check
+    attributes:
+      label: Ready-to-start check
+      description: Do not mark the task ready for an agent until both statements are true.
+      options:
+        - label: The scope is small enough for one focused commit.
+          required: true
+        - label: The acceptance criteria and test plan are clear enough to implement without guessing.
+          required: true
